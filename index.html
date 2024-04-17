@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiPDF Chatbot Documentation</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-top-left-radius: 400px;
+        border-top-right-radius:400px;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        color: #007bff;
+    }
+
+    h3 {
+        color: #004085;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    ul, ol {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    #blockdiagram {
+    text-align: center;
+    }
+
+    #blockdiagram img {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    main {
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+    }
+
+    section {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    footer {
+        background-color: #f8f9fa;
+        color: #495057;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MultiPDF Chatbot Documentation</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#key-features">Key Features</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#blockdiagram">Block Diagram</a></li>
+            <li><a href="#libraries-used">Libraries Used</a></li>
+            <li><a href="#technical-overview">Technical Overview</a></li>
+            <li><a href="#use-cases">Use Cases</a></li>
+            <li><a href="#limitations">Limitations</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>MultiPDF chatbot is a Streamlit web application that acts as a chatbot capable of processing and answering questions based on multiple uploaded PDF documents. The application utilizes various libraries and APIs, including PyPDF2 for reading PDF files, Google Generative AI for embeddings and conversational responses, SpeechRecognition for speech input, FPDF for generating PDFs, and Streamlit for the web interface. It allows users to upload PDFs, process them to extract text, and then interact with the chatbot either through text input or speech recognition. The chatbot employs a conversational chain model to provide answers based on the context provided in the uploaded PDF documents. Additionally, the application provides options for auditory feedback and downloading the chat history as a PDF file. Overall, it offers an interactive and versatile platform for querying information contained within multiple PDF documents.</p>
+        </section>
+
+        <section id="key-features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>
+                    <h3>PDF Upload and Processing:</h3>
+                    <p>Users can upload multiple PDF documents directly to the application. The uploaded PDF files are then processed to extract textual content, enabling the chatbot to analyze and respond to user queries based on the information contained within these documents.</p>
+                </li>
+                <li>
+                    <h3>Text and Speech Interaction:</h3>
+                    <p>The application supports both text and speech input methods, allowing users to interact with the chatbot through written queries or spoken commands. Speech input utilizes the SpeechRecognition library to transcribe spoken words into text format for processing.</p>
+                </li>
+                <li>
+                    <h3>Conversational AI:</h3>
+                    <p>Powered by Google Generative AI, the chatbot employs state-of-the-art conversational models to understand user queries and provide accurate responses. It can handle a wide range of questions, leveraging contextual information from the uploaded PDF documents to generate relevant answers.</p>
+                </li>
+                <li>
+                    <h3>Auditory Feedback:</h3>
+                    <p>Users have the option to receive auditory feedback for chatbot responses. This feature utilizes the pyttsx3 library to convert text-based responses into spoken audio, enhancing the user experience for individuals with visual impairments or those who prefer auditory communication.</p>
+                </li>
+                <li>
+                    <h3>Downloadable Chat History:</h3>
+                    <p>The application allows users to download the entire chat history as a PDF file. This feature enables users to save and review the conversation for future reference, providing a convenient way to retain important information discussed during the interaction.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+            <ol>
+                <li>
+                    <h3>Upload PDF Documents:</h3>
+                    <p>Click on the file uploader section in the sidebar and select one or more PDF documents to upload.</p>
+                </li>
+                <li>
+                    <h3>Submit and Process:</h3>
+                    <p>After uploading the PDF documents, click the "Submit & Process" button to initiate the processing of uploaded PDF files. The application will extract text from the PDF documents and prepare the chatbot for interaction.</p>
+                </li>
+                <li>
+                    <h3>Interact with the Chatbot:</h3>
+                    <p>Use the chat interface to ask questions or provide queries to the chatbot. You can type your questions directly into the text input box or use the "Speak Query" button to provide queries through speech input.</p>
+                </li>
+                <li>
+                    <h3>Review and Download Chat History:</h3>
+                    <p>Once the conversation is complete, you can review the chat history displayed in the main content area. To download the chat history as a PDF file, simply click the "Download PDF Chat" button.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="blockdiagram">
+            <h2>Block Diagram</h2>
+            <img src="img/blockdiagram.png" alt="Block Diagram" />
+        </section>
+
+        <section id="libraries-used">
+            <h2>Libraries Used</h2>
+            <ul>
+                <li>
+                    <h3>PyPDF2:</h3>
+                    <p>This library provides functionality to work with PDF files in Python. It is used to read the content of uploaded PDF documents, extract text from them, and prepare it for further processing within the application.</p>
+                </li>
+                <li>
+                    <h3>langchain:</h3>
+                    <p>LangChain is a library that offers text processing capabilities, including text splitting and vectorization. It facilitates the division of text into manageable chunks and generates embeddings for these chunks, which are essential for similarity comparison and question answering.</p>
+                </li>
+                <li>
+                    <h3>Google Generative AI:</h3>
+                    <p>The application utilizes Google Generative AI APIs for embeddings and conversational AI capabilities. These APIs provide state-of-the-art natural language understanding and generation models, which power the chatbot's ability to comprehend user queries and generate human-like responses.</p>
+                </li>
+                <li>
+                    <h3>Streamlit:</h3>
+                    <p>Streamlit is a Python library used for building interactive web applications. It simplifies the process of creating web interfaces by allowing developers to write Python scripts that generate interactive UI components. The MultiPDF Chatbot utilizes Streamlit to create the user interface for uploading PDF files, interacting with the chatbot, and displaying chat history.</p>
+                </li>
+                <li>
+                    <h3>SpeechRecognition:</h3>
+                    <p>This library enables speech recognition functionality within the application. It captures audio input from the user's microphone and transcribes it into text format, allowing users to interact with the chatbot through spoken commands.</p>
+                </li>
+                <li>
+                    <h3>pyttsx3:</h3>
+                    <p>Pyttsx3 is a text-to-speech conversion library that converts text-based responses generated by the chatbot into audible speech. It provides auditory feedback to users, enhancing the accessibility and user experience of the application.</p>
+                </li>
+                <li>
+                    <h3>FPDF:</h3>
+                    <p>FPDF is a Python library used to generate PDF documents programmatically. It is employed in the MultiPDF Chatbot application to format and create a PDF document containing the chat history, which users can download for reference.</p>
+                </li>
+                <li>
+                    <h3>dotenv:</h3>
+                    <p>Dotenv is a Python library used for loading environment variables from a .env file. It enables the application to securely access sensitive information such as API keys, without hardcoding them directly into the codebase.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="technical-overview">
+            <h2>Technical Overview</h2>
+            <ol>
+                <li>
+                    <h3>PDF Processing</h3>
+                    <p><strong>PyPDF2:</strong> The PdfReader class from PyPDF2 library is used to read the content of uploaded PDF files. It iterates through each page of the PDF documents and extracts text using the extract_text() method.</p>
+                </li>
+                <li>
+                    <h3>Text Chunking</h3>
+                    <p><strong>RecursiveCharacterTextSplitter:</strong> This custom text splitter class divides the extracted text into manageable chunks. It splits the text into segments of a specified size (chunk_size) with an optional overlap (chunk_overlap) to ensure continuity between chunks.</p>
+                </li>
+                <li>
+                    <h3>Embeddings and Vectorization</h3>
+                    <ul>
+                        <li><strong>GoogleGenerativeAIEmbeddings:</strong> The GoogleGenerativeAIEmbeddings class is used to generate embeddings for text chunks using the Google Generative AI API. These embeddings represent the semantic meaning of the text and are essential for similarity comparison and question answering.</li>
+                        <li><strong>FAISS Vector Store:</strong> The FAISS library is employed to create a vector store from the text chunks' embeddings. This vector store enables efficient similarity search operations, allowing the chatbot to find relevant documents based on user queries.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Conversational AI</h3>
+                    <ul>
+                        <li><strong>ChatGoogleGenerativeAI:</strong> The ChatGoogleGenerativeAI class initializes a conversational model powered by the Gemini API from Google Generative AI. This model, based on GPT architecture, is fine-tuned for conversational tasks and is capable of generating human-like responses given a context and a prompt.</li>
+                        <li><strong>Question Answering Chain:</strong> The load_qa_chain function loads a question-answering (QA) chain, which orchestrates the interaction between the conversational model and the vectorized text chunks. It defines a prompt template that guides the model to generate answers based on the provided context and user questions.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>User Interaction</h3>
+                    <ul>
+                        <li><strong>Streamlit Interface:</strong> The application's user interface is created using Streamlit, a Python library for building web applications. It provides widgets for uploading PDF files, displaying chat messages, and capturing user input through text input boxes and buttons.</li>
+                        <li><strong>Speech Recognition:</strong> Speech input is facilitated using the speech_recognition library, which captures audio from the user's microphone and transcribes it into text using Google's speech recognition service.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Auditory Feedback and PDF Generation</h3>
+                    <ul>
+                        <li><strong>Text-to-Speech (TTS):</strong> The pyttsx3 library converts text-based responses into audible speech, providing auditory feedback to the user upon request.</li>
+                        <li><strong>PDF Generation:</strong> The FPDF library is employed to generate a PDF document containing the chat history. It iterates through the chat messages and formats them into a PDF file, which users can download for reference.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Integration and Configuration</h3>
+                    <ul>
+                        <li><strong>Google API Key:</strong> The application requires a Google API key, which is stored in a .env file and retrieved using the dotenv library. This key is used to authenticate requests to the Google Generative AI API for embeddings and conversational responses.</li>
+                        <li><strong>Streamlit Configuration:</strong> The Streamlit page is configured with custom settings such as page title, icon, and sidebar buttons for documentation and clearing chat history.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Deployment and Collaboration</h3>
+                    <ul>
+                        <li><strong>GitHub Repository:</strong> The application code is typically hosted on a GitHub repository, allowing collaboration among developers and version control management.</li>
+                        <li><strong>Documentation and Support:</strong> Detailed documentation, like this one, provides guidance on using the application and understanding its functionality. Users can refer to the documentation for assistance and troubleshooting.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section id="use-cases">
+            <h2>Use Cases</h2>
+            <ol>
+                <li>
+                    <h3>Research Assistance:</h3>
+                    <p>Researchers and students can use the chatbot to quickly extract information from multiple research papers or academic documents. They can upload PDFs related to their topic of interest and ask specific questions to gather relevant insights and references.</p>
+                </li>
+                <li>
+                    <h3>Legal Document Analysis:</h3>
+                    <p>Legal professionals can leverage the chatbot to analyze legal documents, such as contracts, agreements, or court rulings. They can upload PDFs of these documents and inquire about specific clauses, legal terms, or case precedents to obtain accurate interpretations and explanations.</p>
+                </li>
+                <li>
+                    <h3>Educational Support:</h3>
+                    <p>Teachers and educators can utilize the chatbot as a teaching aid in the classroom or online learning environment. They can upload PDFs of textbooks, articles, or study materials and encourage students to ask questions related to the content. The chatbot can provide additional explanations, clarifications, or further reading suggestions to enhance understanding.</p>
+                </li>
+                <li>
+                    <h3>Customer Support:</h3>
+                    <p>Businesses can integrate the chatbot into their customer support systems to assist customers with inquiries related to product manuals, user guides, or troubleshooting documents. Customers can upload PDFs of product documentation and ask questions about features, usage instructions, or technical issues, receiving prompt and accurate assistance from the chatbot.</p>
+                </li>
+                <li>
+                    <h3>Knowledge Management:</h3>
+                    <p>Organizations can use the chatbot to build a knowledge base by uploading and indexing internal documents, reports, or policies. Employees can then access this knowledge base through the chatbot to retrieve information, seek guidance on company procedures, or resolve common queries, improving overall productivity and efficiency.</p>
+                </li>
+                <li>
+                    <h3>Legal Compliance Checks:</h3>
+                    <p>Compliance officers and legal advisors can employ the chatbot to conduct compliance checks on regulatory documents, such as laws, regulations, or industry standards. They can upload PDFs of relevant documents and inquire about specific compliance requirements or legal obligations, ensuring adherence to applicable laws and regulations.</p>
+                </li>
+                <li>
+                    <h3>Medical Information Retrieval:</h3>
+                    <p>Healthcare professionals can utilize the chatbot to access medical literature, research papers, or clinical guidelines. They can upload PDFs of medical journals or articles and ask questions regarding diagnostic criteria, treatment protocols, or drug interactions, obtaining evidence-based information to support clinical decision-making.</p>
+                </li>
+                <li>
+                    <h3>Training and Onboarding:</h3>
+                    <p>Human resources departments can deploy the chatbot to facilitate employee training and onboarding processes. New hires can upload PDFs of training manuals, policy documents, or procedural guides and ask questions to familiarize themselves with company policies, processes, and best practices.</p>
+                </li>
+                <li>
+                    <h3>For the Visually impaired:</h3>
+                    <p>Visually impaired students can use the chatbot as a supplementary learning tool to enhance their understanding of academic materials. They can upload PDFs of textbooks, lecture notes, or study guides and ask the chatbot to explain concepts, clarify doubts, or provide additional examples, promoting inclusive education and academic success.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="limitations">
+            <h2>Limitations</h2>
+            <ol>
+                <li>
+                    <h3>Scalability and Performance:</h3>
+                    <p>The code may face scalability and performance issues when processing large volumes of PDF documents or handling concurrent user requests. Processing efficiency, memory usage, and response times may degrade under heavy load, impacting the overall user experience.</p>
+                </li>
+                <li>
+                    <h3>Maintenance and Updates:</h3>
+                    <p>The codebase may require regular maintenance and updates to address issues, incorporate new features, or adapt to changes in external APIs and libraries. Without proper maintenance practices, the code may become outdated or vulnerable to security risks over time.</p>
+                </li>
+                <li>
+                    <h3>Dependency Management:</h3>
+                    <p>Managing dependencies and ensuring compatibility between different libraries and APIs used in the code can be challenging. Version conflicts, deprecated features, or changes in library behavior may introduce bugs or compatibility issues that require careful attention and testing.</p>
+                </li>
+                <li>
+                    <h3>Language Support:</h3>
+                    <p>The effectiveness of the chatbot is inherently tied to its language capabilities. The chatbot is trained on English as a primary language; it may struggle to understand queries or extract information accurately from PDF documents written in other languages. This limitation restricts its utility for users who work with documents in languages other than the one supported by the chatbot.</p>
+                </li>
+            </ol>
+        </section>
+        
+        
+        
+        
+        
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 MultiPDF Chatbot</p>
+    </footer>
+</body>
+</html>
