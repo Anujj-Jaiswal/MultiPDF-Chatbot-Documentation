@@ -133,7 +133,8 @@
     <main>
         <section id="introduction">
             <h2>Introduction</h2>
-            <p>MultiPDF chatbot is a Streamlit web application that acts as a chatbot capable of processing and answering questions based on multiple uploaded PDF documents. The application utilizes various libraries and APIs, including PyPDF2 for reading PDF files, Google Generative AI for embeddings and conversational responses, SpeechRecognition for speech input, FPDF for generating PDFs, and Streamlit for the web interface. It allows users to upload PDFs, process them to extract text, and then interact with the chatbot either through text input or speech recognition. The chatbot employs a conversational chain model to provide answers based on the context provided in the uploaded PDF documents. Additionally, the application provides options for auditory feedback and downloading the chat history as a PDF file. Overall, it offers an interactive and versatile platform for querying information contained within multiple PDF documents.</p>
+            <p id="introduction-text">MultiPDF chatbot is a Streamlit web application that acts as a chatbot capable of processing and answering questions based on multiple uploaded PDF documents. The application utilizes various libraries and APIs, including PyPDF2 for reading PDF files, Google Generative AI for embeddings and conversational responses, SpeechRecognition for speech input, FPDF for generating PDFs, and Streamlit for the web interface. It allows users to upload PDFs, process them to extract text, and then interact with the chatbot either through text input or speech recognition. The chatbot employs a conversational chain model to provide answers based on the context provided in the uploaded PDF documents. Additionally, the application provides options for auditory feedback and downloading the chat history as a PDF file. Overall, it offers an interactive and versatile platform for querying information contained within multiple PDF documents.</p>
+            <button onclick="speakIntroduction()">Read Introduction</button>
         </section>
 
         <section id="key-features">
@@ -160,6 +161,7 @@
                     <p>The application allows users to download the entire chat history as a PDF file. This feature enables users to save and review the conversation for future reference, providing a convenient way to retain important information discussed during the interaction.</p>
                 </li>
             </ul>
+            <button onclick="speakKeyFeatures()">Read Key Features</button>
         </section>
 
         <section id="getting-started">
@@ -182,6 +184,7 @@
                     <p>Once the conversation is complete, you can review the chat history displayed in the main content area. To download the chat history as a PDF file, simply click the "Download PDF Chat" button.</p>
                 </li>
             </ol>
+            <button onclick="speakGettingStarted()">Read Getting Started</button>
         </section>
 
         <section id="blockdiagram">
@@ -225,6 +228,7 @@
                     <p>Dotenv is a Python library used for loading environment variables from a .env file. It enables the application to securely access sensitive information such as API keys, without hardcoding them directly into the codebase.</p>
                 </li>
             </ul>
+            <button onclick="speakLibraries()">Read Libraries Description</button>
         </section>
 
         <section id="technical-overview">
@@ -281,6 +285,7 @@
                     </ul>
                 </li>
             </ol>
+            <button onclick="speakTechnicalOverview()">Read Technical Overview</button>
         </section>
 
         <section id="use-cases">
@@ -323,6 +328,7 @@
                     <p>Visually impaired students can use the chatbot as a supplementary learning tool to enhance their understanding of academic materials. They can upload PDFs of textbooks, lecture notes, or study guides and ask the chatbot to explain concepts, clarify doubts, or provide additional examples, promoting inclusive education and academic success.</p>
                 </li>
             </ol>
+            <button onclick="speakUseCases()">Read Use Cases</button>
         </section>
 
         <section id="limitations">
@@ -345,16 +351,87 @@
                     <p>The effectiveness of the chatbot is inherently tied to its language capabilities. The chatbot is trained on English as a primary language; it may struggle to understand queries or extract information accurately from PDF documents written in other languages. This limitation restricts its utility for users who work with documents in languages other than the one supported by the chatbot.</p>
                 </li>
             </ol>
+            <button onclick="speakLimitations()">Read Limitations</button>
         </section>
-        
-        
-        
-        
-        
         
     </main>
     <footer>
         <p>&copy; 2024 MultiPDF Chatbot</p>
     </footer>
+
+    <!-- JavaScript for text-to-speech -->
+    <script>
+        function speakIntroduction() {
+            var introductionText = document.getElementById('introduction-text').innerText;
+            var synth = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance(introductionText);
+            synth.speak(utterance);
+        }
+        </script>
+
+    <!-- JavaScript for text-to-speech -->
+    <script>
+        function speakKeyFeatures() {
+            var keyFeaturesText = document.getElementById('key-features').innerText;
+            var synth = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance(keyFeaturesText);
+            synth.speak(utterance);
+        }
+        </script>
+
+    <!-- JavaScript for text-to-speech -->
+    <script>
+        function speakGettingStarted() {
+            var keyFeaturesText = document.getElementById('getting-started').innerText;
+            var synth = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance(keyFeaturesText);
+            synth.speak(utterance);
+        }
+        </script>
+
+    <!-- JavaScript for text-to-speech -->
+    <script>
+        function speakLibraries() {
+            var synth = window.speechSynthesis;
+            var librariesSection = document.getElementById("libraries-used");
+            var librariesText = librariesSection.innerText;
+            var utterance = new SpeechSynthesisUtterance(librariesText);
+            synth.speak(utterance);
+        }
+        </script>
+
+    <!-- JavaScript for text-to-speech -->
+    <script>
+        function speakTechnicalOverview() {
+            var synth = window.speechSynthesis;
+            var useCasesSection = document.getElementById("technical-overview");
+            var text = useCasesSection.textContent;
+            var utterance = new SpeechSynthesisUtterance(text);
+            synth.speak(utterance);
+        }
+        </script>   
+
+    <!-- JavaScript for text-to-speech -->
+    <script>
+        function speakUseCases() {
+            var synth = window.speechSynthesis;
+            var useCasesSection = document.getElementById('use-cases');
+            var text = useCasesSection.textContent;
+            var utterance = new SpeechSynthesisUtterance(text);
+            synth.speak(utterance);
+        }
+        </script>   
+    
+    <!-- JavaScript for text-to-speech -->
+    <script>
+        function speakLimitations() {
+            var synth = window.speechSynthesis;
+            var useCasesSection = document.getElementById('limitations');
+            var text = useCasesSection.textContent;
+            var utterance = new SpeechSynthesisUtterance(text);
+            synth.speak(utterance);
+        }
+        </script>   
+
 </body>
 </html>
